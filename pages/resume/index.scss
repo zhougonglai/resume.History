@@ -1,0 +1,26 @@
+.container {
+	.mdc-card {
+		.card__primary-action {
+			display: flex;
+			flex-direction: row;
+			.card__media {
+				width: 110px;
+				border-radius: 0;
+			}
+
+			.card__primary {
+				flex: 1;
+				padding: 24px;
+
+				.fit-content {
+					position: absolute;
+					right: 32px;
+					top: calc(50% - 12px);
+				}
+			}
+		}
+	}
+
+	.card {
+	}
+}
