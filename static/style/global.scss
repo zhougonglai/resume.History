@@ -135,7 +135,7 @@ $n: 8px;
 @import '@material/react-drawer/index.scss';
 @import '@material/react-list/index.scss';
 @import '@material/react-typography/index.scss';
-
+@import '@material/react-dialog/index.scss';
 @import '@material/react-menu-surface/index.scss';
 @import '@material/react-menu/index.scss';
 @import '@material/react-select/index.scss';
@@ -148,6 +148,10 @@ input {
 	font-size: 1rem;
 	font-weight: 500;
 	line-height: 1.5rem;
+}
+
+.mdc-layout-grid {
+	max-width: 1440px;
 }
 
 .mdc-button-shaped {

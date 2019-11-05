@@ -132,19 +132,28 @@
 	&::before {
 		content: '';
 		position: absolute;
-		left: -5px;
-		top: 25%;
-		height: 50%;
-		width: 3px;
+		left: -2px;
+		top: 29%;
+		height: 42%;
+		width: 2px;
 		background-color: var(--mdc-theme-primary);
 	}
 	&::after {
 		content: '';
 		position: absolute;
-		left: 0;
-		top: 25%;
-		height: 50%;
-		width: 3px;
+		left: 2px;
+		top: 29%;
+		height: 42%;
+		width: 2px;
 		background-color: var(--mdc-theme-primary);
+	}
+}
+
+.mdc-dialog__container {
+	.dialog-close {
+		position: absolute;
+		top: 8px;
+		right: 8px;
+		z-index: 8;
 	}
 }

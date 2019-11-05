@@ -43,7 +43,7 @@ const Head = props => (
 		<link
 			href='https://fonts.googleapis.com/icon?family=Material+Icons'
 			rel='stylesheet'></link>
-		<script src='https://at.alicdn.com/t/font_299418_by9ecr8edib.js'></script>
+		<script src='https://at.alicdn.com/t/font_1494421_vo3pg0wgetf.js'></script>
 		{props.styles &&
 			props.styles.length &&
 			props.styles.map((style, i) => (
