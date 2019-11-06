@@ -6,6 +6,7 @@ import TopAppBar, {
 	TopAppBarTitle,
 } from '@material/react-top-app-bar';
 import MaterialIcon from '@material/react-material-icon';
+import Router from 'next/router';
 import List, {
 	ListItem,
 	ListItemText,
@@ -42,7 +43,12 @@ export default class MDCLayout extends React.Component {
 	state = {
 		open: false,
 		activeIndex: 0,
+		type: '关于我',
 	};
+
+	componentDidMount() {
+		this.setState(pathMatch[Router.pathname]);
+	}
 
 	/**
 	 * 切换 Drawer
@@ -54,11 +60,50 @@ export default class MDCLayout extends React.Component {
 		});
 	};
 
+	switchRouter = activeIndex => {
+		switch (activeIndex) {
+			case 0:
+				this.setState(
+					{
+						activeIndex,
+						type: '关于我',
+					},
+					() => {
+						Router.push('/resume');
+					},
+				);
+				break;
+			case 1:
+				this.setState(
+					{
+						activeIndex,
+						type: '项目经历',
+					},
+					() => {
+						Router.push('/resume/projects');
+					},
+				);
+				break;
+			case 2:
+				this.setState(
+					{
+						activeIndex,
+						type: '合作',
+					},
+					() => {
+						Router.push('/resume/cooperation');
+					},
+				);
+				break;
+		}
+	};
+
 	render() {
 		const { children } = this.props;
+		const { type } = this.state;
 		return (
 			<div className='root'>
-				<Head />
+				<Head title={type} />
 				<Drawer
 					modal
 					open={this.state.open}
@@ -70,13 +115,18 @@ export default class MDCLayout extends React.Component {
 					<DrawerContent>
 						<ListGroup>
 							<ListDivider tag='div' />
-							<ListGroupSubheader>类型</ListGroupSubheader>
-							<List singleSelection selectedIndex={this.state.activeIndex}>
+							<List
+								singleSelection
+								selectedIndex={this.state.activeIndex}
+								handleSelect={index => this.switchRouter(index)}>
 								<ListItem>
 									<ListItemText primaryText='关于我' />
 								</ListItem>
 								<ListItem>
 									<ListItemText primaryText='项目经历' />
+								</ListItem>
+								<ListItem>
+									<ListItemText primaryText='合作' />
 								</ListItem>
 							</List>
 							<ListDivider tag='div' />
@@ -95,7 +145,7 @@ export default class MDCLayout extends React.Component {
 										onClick={() => this.drawerHandle(true)}
 									/>
 								</TopAppBarIcon>
-								<TopAppBarTitle>关于我</TopAppBarTitle>
+								<TopAppBarTitle>{type}</TopAppBarTitle>
 							</TopAppBarSection>
 						</TopAppBarRow>
 					</TopAppBar>

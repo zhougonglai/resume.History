@@ -83,6 +83,7 @@ export default class Resume extends React.Component {
 				</Dialog>
 				<Grid>
 					<Row>
+						{/* 基本信息 */}
 						<Cell phoneColumns={4} tabletColumns={4} desktopColumns={4}>
 							<div className='subtitle'>
 								<Subtitle1>基本信息</Subtitle1>
@@ -116,7 +117,7 @@ export default class Resume extends React.Component {
 								</CardPrimaryContent>
 							</Card>
 						</Cell>
-
+						{/* 练习我 */}
 						<Cell phoneColumns={4} tabletColumns={4} desktopColumns={4}>
 							<div className='subtitle'>
 								<Subtitle1>联系我</Subtitle1>
@@ -178,7 +179,7 @@ export default class Resume extends React.Component {
 								</List>
 							</div>
 						</Cell>
-
+						{/* 核心技能 */}
 						<Cell phoneColumns={4} tabletColumns={4} desktopColumns={4}>
 							<div className='subtitle'>
 								<Subtitle1>核心技能</Subtitle1>
@@ -206,7 +207,7 @@ export default class Resume extends React.Component {
 									<ListItemGraphic
 										graphic={<img src='/node.png' alt='NodeJs' />}
 									/>
-									<ListItemText primaryText='express . koa . egg . nest' />
+									<ListItemText primaryText='express . koa . egg . GraphQL . Nest' />
 								</ListItem>
 								<ListItem>
 									<ListItemGraphic
@@ -223,7 +224,7 @@ export default class Resume extends React.Component {
 								</ListItem>
 							</List>
 						</Cell>
-
+						{/* 自我描述 */}
 						<Cell phoneColumns={4} tabletColumns={4} desktopColumns={4}>
 							<div className='subtitle'>
 								<Subtitle1>自我描述</Subtitle1>
@@ -245,7 +246,7 @@ export default class Resume extends React.Component {
 								</small>
 							</p>
 						</Cell>
-
+						{/* 工作经历 */}
 						<Cell phoneColumns={4} tabletColumns={4} desktopColumns={4}>
 							<div className='subtitle'>
 								<Subtitle1>工作经历</Subtitle1>
@@ -364,7 +365,7 @@ export default class Resume extends React.Component {
 								</div>
 							</div>
 						</Cell>
-
+						{/* 教育经历 */}
 						<Cell phoneColumns={4} tabletColumns={4} desktopColumns={4}>
 							<div className='subtitle'>
 								<Subtitle1>教育经历</Subtitle1>

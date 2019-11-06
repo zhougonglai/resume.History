@@ -44,6 +44,20 @@ p {
 	--geekblue-8: #10239e;
 	--geekblue-9: #061178;
 	--geekblue-10: #030852;
+
+	/** gray **/
+	--gray-1: #ffffff;
+	--gray-2: #fafafa;
+	--gray-3: #f5f5f5;
+	--gray-4: #e8e8e8;
+	--gray-5: #d9d9d9;
+	/* dark */
+	--gray-6: #bfbfbf;
+	--gray-7: #8c8c8c;
+	--gray-8: #595959;
+	--gray-9: #262626;
+	--gray-10: #000000;
+
 	/** secondary **/
 	--mdc-theme-secondary: #0cd1e8;
 	--mdc-theme-secondary-rgb: 12, 209, 232;
@@ -169,4 +183,10 @@ input {
 .mdc-list-item__text,
 .mdc-list-item__meta {
 	outline: 0;
+}
+
+.mdc-chip-set.shaped {
+	.mdc-chip {
+		border-radius: 4px;
+	}
 }
