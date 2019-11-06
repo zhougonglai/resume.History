@@ -1,6 +1,7 @@
 import MDCLayout from '../../components/layout/MDC.layout';
 import { Grid, Row, Cell } from '@material/react-layout-grid';
 import MaterialIcon from '@material/react-material-icon';
+import { ChipSet, Chip } from '@material/react-chips';
 import Card, {
 	CardPrimaryContent,
 	CardMedia,
@@ -18,11 +19,13 @@ import List, {
 	ListItemGraphic,
 } from '@material/react-list';
 import IconButton from '@material/react-icon-button';
+import Button from '@material/react-button';
 import {
 	Headline6,
 	Subtitle1,
 	Subtitle2,
 	Caption,
+	Body1,
 } from '@material/react-typography';
 import Dialog, {
 	DialogTitle,
@@ -36,6 +39,7 @@ export default class Resume extends React.Component {
 	static Layout = MDCLayout;
 	state = {
 		open: false,
+		recent: false,
 	};
 
 	constructor(props) {
@@ -46,19 +50,25 @@ export default class Resume extends React.Component {
 	selectItem = index => {
 		switch (index) {
 			case 0:
-				window.open(
-					`mailto:zhou_gong_lai@qq.com?subject=[招聘]邀请投递:前端&body=`,
-				);
-				break;
-			case 1:
-				window.open(`https://www.amap.com/search?query=武汉市`);
-				break;
-			case 2:
 				this.setState({
 					open: !this.state.open,
 				});
 				break;
+			case 1:
+				window.open(
+					`mailto:zhou_gong_lai@qq.com?subject=[招聘]邀请投递:前端&body=`,
+				);
+				break;
+			case 2:
+				window.open(`https://www.amap.com/search?query=武汉市`);
+				break;
 		}
+	};
+
+	togglerRecent = () => {
+		this.setState({
+			recent: !this.state.recent,
+		});
 	};
 
 	render() {
@@ -67,7 +77,7 @@ export default class Resume extends React.Component {
 				<Dialog open={this.state.open}>
 					<IconButton
 						className='dialog-close'
-						onClick={() => this.selectItem(2)}>
+						onClick={() => this.selectItem(0)}>
 						<MaterialIcon icon='close' />
 					</IconButton>
 					<DialogTitle>微信二维码</DialogTitle>
@@ -75,9 +85,20 @@ export default class Resume extends React.Component {
 						<img className='qrcode' src='/WechatIMG35.jpeg' alt='qrcode' />
 					</DialogContent>
 				</Dialog>
+				<Dialog open={this.state.recent}>
+					<IconButton
+						className='dialog-close'
+						onClick={() => this.togglerRecent()}>
+						<MaterialIcon icon='close' />
+					</IconButton>
+					<DialogTitle>近况</DialogTitle>
+					<DialogContent>
+						<img className='recent' src='/WechatIMG36.jpeg' alt='recent' />
+					</DialogContent>
+				</Dialog>
 				<Grid>
 					<Row>
-						<Cell phoneColumns={4} tabletColumns={4} desktopColumns={6}>
+						<Cell phoneColumns={4} tabletColumns={4} desktopColumns={4}>
 							<div className='subtitle'>
 								<Subtitle1>基本信息</Subtitle1>
 							</div>
@@ -110,43 +131,13 @@ export default class Resume extends React.Component {
 								</CardPrimaryContent>
 							</Card>
 						</Cell>
-						<Cell phoneColumns={4} tabletColumns={4} desktopColumns={6}>
+
+						<Cell phoneColumns={4} tabletColumns={4} desktopColumns={4}>
 							<div className='subtitle'>
 								<Subtitle1>联系我</Subtitle1>
 							</div>
 							<div className='card'>
 								<List handleSelect={active => this.selectItem(active)}>
-									<ListItem>
-										<ListItemGraphic
-											graphic={
-												<svg className='icon' aria-hidden='true'>
-													<use xlinkHref='#icon-mail'></use>
-												</svg>
-											}
-										/>
-										<ListItemText primaryText='zhou_gong_lai@qq.com' />
-										<ListItemMeta meta='email' />
-									</ListItem>
-									<ListItem>
-										<ListItemGraphic
-											graphic={
-												<svg className='icon' aria-hidden='true'>
-													<use xlinkHref='#icon-Geo-fence'></use>
-												</svg>
-											}
-										/>
-										<ListItemText primaryText='武汉地区' />
-										<ListItemMeta
-											meta={
-												<MaterialIcon
-													className='fit-content'
-													aria-label='arrow_forward'
-													hasRipple
-													icon='my_location'
-												/>
-											}
-										/>
-									</ListItem>
 									<ListItem>
 										<ListItemGraphic
 											graphic={
@@ -167,10 +158,43 @@ export default class Resume extends React.Component {
 											}
 										/>
 									</ListItem>
+									<ListItem>
+										<ListItemGraphic
+											graphic={
+												<svg className='icon' aria-hidden='true'>
+													<use xlinkHref='#icon-mail'></use>
+												</svg>
+											}
+										/>
+										<ListItemText primaryText='zhou_gong_lai@qq.com' />
+										<ListItemMeta meta='email' />
+									</ListItem>
+
+									<ListItem>
+										<ListItemGraphic
+											graphic={
+												<svg className='icon' aria-hidden='true'>
+													<use xlinkHref='#icon-Geo-fence'></use>
+												</svg>
+											}
+										/>
+										<ListItemText primaryText='武汉地区' />
+										<ListItemMeta
+											meta={
+												<MaterialIcon
+													className='fit-content'
+													aria-label='arrow_forward'
+													hasRipple
+													icon='my_location'
+												/>
+											}
+										/>
+									</ListItem>
 								</List>
 							</div>
 						</Cell>
-						<Cell phoneColumns={4} tabletColumns={4} desktopColumns={6}>
+
+						<Cell phoneColumns={4} tabletColumns={4} desktopColumns={4}>
 							<div className='subtitle'>
 								<Subtitle1>核心技能</Subtitle1>
 							</div>
@@ -208,17 +232,58 @@ export default class Resume extends React.Component {
 								</ListItem>
 							</List>
 						</Cell>
-						<Cell phoneColumns={4} tabletColumns={4} desktopColumns={6}>
+
+						<Cell phoneColumns={4} tabletColumns={4} desktopColumns={4}>
 							<div className='subtitle'>
 								<Subtitle1>自我描述</Subtitle1>
+								<div className='fill'></div>
+								<Button
+									trailingIcon={<MaterialIcon icon='info' />}
+									onClick={() => this.togglerRecent()}>
+									秃头警告
+								</Button>
 							</div>
+							<p className='indent'>
+								长期作战一线的码农.4年时间参与了大大小小数十个项目.项目涉及PC.Mobile.
+								微信平台.国外平台等各类项目. 热衷学习热门技术.练习相关解决方案.{' '}
+								<br />
+								<small>
+									tip:
+									早期常常熬夜加班到天亮.对身心造成了极大的影响.目前不太能接受996或连续性加班.
+								</small>
+							</p>
 						</Cell>
-						<Cell phoneColumns={4} tabletColumns={4} desktopColumns={6}>
+
+						<Cell phoneColumns={4} tabletColumns={4} desktopColumns={4}>
 							<div className='subtitle'>
 								<Subtitle1>工作经历</Subtitle1>
 							</div>
+							<div className='cell-list'>
+								<div className='cell-item'>
+									<div className='item-content'>
+										<img src='/logo_default.png' className='avatar' />
+										<div className='item-info'>
+											<strong>武汉无限未来科技有限公司</strong>
+											<p>前端开发工程师</p>
+										</div>
+										<div className='time-line'>
+											<i>2019.9 ~ 2019.11</i>
+										</div>
+									</div>
+									<div className='item-container border-top-1px'>
+										<div className='chips'>
+											<ChipSet>
+												<Chip label='微信公众号' />
+												<Chip label='APP' />
+												<Chip label='企业站' />
+											</ChipSet>
+										</div>
+									</div>
+								</div>
+							</div>
 						</Cell>
-						<Cell phoneColumns={4} tabletColumns={4} desktopColumns={6}>
+
+						<Cell phoneColumns={4} tabletColumns={4} desktopColumns={4}>
 							<div className='subtitle'>
 								<Subtitle1>教育经历</Subtitle1>
 							</div>
