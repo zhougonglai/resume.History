@@ -1,14 +1,15 @@
 .cell-list {
 	display: flex;
+	flex-direction: column;
 	.cell-item {
 		background-color: #fff;
-		border-radius: 5px;
 		width: 100%;
+		padding: 8px 0;
 
 		.icon,
 		.avatar {
 			margin-right: 8px;
-			width: 3.25rem;
+			min-width: 3.25rem;
 			height: 3.25rem;
 		}
 
@@ -20,6 +21,18 @@
 				position: absolute;
 				bottom: 4px;
 				right: 4px;
+				z-index: 1;
+				&::after {
+					content: '';
+					position: absolute;
+					bottom: -2px;
+					right: -2px;
+					background-color: var(--geekblue-4);
+					height: 0.625rem;
+					width: 120%;
+					z-index: -1;
+					transform: skew(-12deg);
+				}
 			}
 		}
 
@@ -36,7 +49,8 @@
 		}
 
 		& + .cell-item {
-			margin-top: 32px;
+			margin-top: 8px;
+			border-top: 1px solid #e9e9ed;
 		}
 	}
 }
@@ -148,6 +162,7 @@
 	padding: 4px 0;
 	margin: 4px 0;
 	display: flex;
+	align-items: center;
 	&::before {
 		content: '';
 		position: absolute;

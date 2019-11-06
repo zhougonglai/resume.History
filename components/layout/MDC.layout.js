@@ -12,7 +12,6 @@ import List, {
 	ListGroup,
 	ListGroupSubheader,
 	ListDivider,
-	ListItemGraphic,
 } from '@material/react-list';
 import Drawer, {
 	DrawerHeader,
@@ -23,6 +22,21 @@ import Drawer, {
 } from '@material/react-drawer';
 import Head from '../head';
 import './MDC.layout.scss';
+
+const pathMatch = {
+	'/resume': {
+		activeIndex: 0,
+		type: '关于我',
+	},
+	'/resume/projects': {
+		activeIndex: 1,
+		type: '项目经历',
+	},
+	'/resume/cooperation': {
+		activeIndex: 2,
+		type: '合作',
+	},
+};
 
 export default class MDCLayout extends React.Component {
 	state = {
@@ -61,6 +75,9 @@ export default class MDCLayout extends React.Component {
 								<ListItem>
 									<ListItemText primaryText='关于我' />
 								</ListItem>
+								<ListItem>
+									<ListItemText primaryText='项目经历' />
+								</ListItem>
 							</List>
 							<ListDivider tag='div' />
 						</ListGroup>
@@ -79,11 +96,6 @@ export default class MDCLayout extends React.Component {
 									/>
 								</TopAppBarIcon>
 								<TopAppBarTitle>关于我</TopAppBarTitle>
-							</TopAppBarSection>
-							<TopAppBarSection align='end' role='toolbar'>
-								<TopAppBarIcon actionItem tabIndex={1}>
-									<MaterialIcon aria-label='info' hasRipple icon='info' />
-								</TopAppBarIcon>
 							</TopAppBarSection>
 						</TopAppBarRow>
 					</TopAppBar>
