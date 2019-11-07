@@ -12,8 +12,20 @@ body {
 	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
-h6 {
+h6,
+h5,
+h4,
+h3,
+h2,
+h1,
+ul {
 	margin: 0;
+}
+
+li {
+	& + li {
+		margin-top: 4px;
+	}
 }
 
 p {
@@ -31,7 +43,6 @@ p {
 
 :root {
 	--mdc-theme-primary: #2f54eb;
-	--mdc-theme-on-primary: #5f6368;
 	/* light */
 	--geekblue-1: #f0f5ff;
 	--geekblue-2: #d6e4ff;

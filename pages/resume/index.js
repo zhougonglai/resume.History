@@ -117,7 +117,7 @@ export default class Resume extends React.Component {
 								</CardPrimaryContent>
 							</Card>
 						</Cell>
-						{/* 练习我 */}
+						{/* 联系我 */}
 						<Cell phoneColumns={4} tabletColumns={4} desktopColumns={4}>
 							<div className='subtitle'>
 								<Subtitle1>联系我</Subtitle1>

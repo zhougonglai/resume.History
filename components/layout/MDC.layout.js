@@ -67,6 +67,7 @@ export default class MDCLayout extends React.Component {
 					{
 						activeIndex,
 						type: '关于我',
+						open: false,
 					},
 					() => {
 						Router.push('/resume');
@@ -78,6 +79,7 @@ export default class MDCLayout extends React.Component {
 					{
 						activeIndex,
 						type: '项目经历',
+						open: false,
 					},
 					() => {
 						Router.push('/resume/projects');
@@ -89,6 +91,7 @@ export default class MDCLayout extends React.Component {
 					{
 						activeIndex,
 						type: '合作',
+						open: false,
 					},
 					() => {
 						Router.push('/resume/cooperation');
