@@ -1,6 +1,8 @@
 import MDCLayout from '../../components/layout/MDC.layout';
 import { Grid, Row, Cell } from '@material/react-layout-grid';
 import { Headline5 } from '@material/react-typography';
+import IconButton from '@material/react-icon-button';
+import Dialog, { DialogTitle, DialogContent } from '@material/react-dialog';
 import Button from '@material/react-button';
 import MaterialIcon from '@material/react-material-icon';
 import './projects.scss';
@@ -8,9 +10,60 @@ import './projects.scss';
 export default class Projects extends React.Component {
 	static Layout = MDCLayout;
 
+	state = {
+		example1: false,
+		example2: false,
+	};
+
+	togglerEx1 = () => {
+		this.setState({
+			example1: !this.state.example1,
+		});
+	};
+
+	togglerEx2 = () => {
+		this.setState({
+			example2: !this.state.example2,
+		});
+	};
+
 	render() {
 		return (
 			<div className='container-projects'>
+				<Dialog open={this.state.example1}>
+					<IconButton
+						className='dialog-close'
+						onClick={() => this.togglerEx1()}>
+						<MaterialIcon icon='close' />
+					</IconButton>
+					<DialogTitle>初期版本</DialogTitle>
+					<DialogContent>
+						<video
+							src='/ex1.mp4'
+							controls
+							x5-video-player-type='h5'
+							x5-video-player-fullscreen='portraint'
+							playsInline
+						/>
+					</DialogContent>
+				</Dialog>
+				<Dialog open={this.state.example2}>
+					<IconButton
+						className='dialog-close'
+						onClick={() => this.togglerEx2()}>
+						<MaterialIcon icon='close' />
+					</IconButton>
+					<DialogTitle>中期版本</DialogTitle>
+					<DialogContent>
+						<video
+							src='/ex2.mp4'
+							controls
+							x5-video-player-type='h5'
+							x5-video-player-fullscreen='portraint'
+							playsInline
+						/>
+					</DialogContent>
+				</Dialog>
 				<Grid>
 					<Headline5 className='title'>武汉无限未来科技有限公司</Headline5>
 					<Row>
@@ -206,13 +259,20 @@ export default class Projects extends React.Component {
 									<div className='tag'>微信网页</div>
 								</div>
 								<div className='card-content'>
-									项目简介: made by <code className='text-danger'>vue@2.x</code>
+									项目简介: create by{' '}
+									<code className='text-danger'>vue-cli</code>
 									<div className='card-media'>
 										<img src='/WX20191107.png' />
 									</div>
+									<div className='mt-2'>
+										<Button onClick={this.togglerEx1}>演示1</Button>
+										<Button onClick={this.togglerEx2} className='ml-2'>
+											演示2
+										</Button>
+									</div>
 								</div>
 								<div className='actions'>
-									线上地址: 微信公众号搜索"NN约玩"
+									实际项目: 微信公众号搜索"NN约玩"
 									<div className='fill'></div>
 									<Button
 										dense
@@ -241,7 +301,7 @@ export default class Projects extends React.Component {
 								<div className='card-content'>
 									<div className='desc'>
 										项目业务: create by{' '}
-										<code className='text-danger'>vue with iview UI</code>
+										<code className='text-danger'>vue@2.x with iview UI</code>
 										<ul>
 											<li>
 												入职流程:
@@ -296,7 +356,16 @@ export default class Projects extends React.Component {
 						</Cell>
 
 						{/* TPlus V3 */}
-						<Cell phoneColumns={4} tabletColumns={4} desktopColumns={4}></Cell>
+						<Cell phoneColumns={4} tabletColumns={4} desktopColumns={4}>
+							<div className='app-card'>
+								<div className='card-header'>
+									TPlus V3.x (教师客户端)
+									<div className='fill'></div>
+									<div className='tag'>国际客户服务</div>
+									<div className='tag'>国际推广</div>
+								</div>
+							</div>
+						</Cell>
 					</Row>
 				</Grid>
 			</div>
