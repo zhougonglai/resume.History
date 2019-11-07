@@ -268,8 +268,8 @@ export default class Resume extends React.Component {
 											参与项目:
 											<ChipSet>
 												<Chip label='微信-天马报告 [ 手机页 ]' />
-												<Chip label='斗牛商城 [ 双平台APP+手机页 . 电商 ]' />
-												<Chip label='湖北法拍网 [ 跨终端企业站 . 响应式电商 ]' />
+												<Chip label='电商App孵化 [ 双平台APP+手机页 . 电商 ]' />
+												<Chip label='电商页面孵化 [ 跨终端企业站 . 响应式电商 ]' />
 											</ChipSet>
 										</div>
 									</div>
