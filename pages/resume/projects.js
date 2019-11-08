@@ -13,6 +13,11 @@ export default class Projects extends React.Component {
 	state = {
 		example1: false,
 		example2: false,
+		landiv3_login: false,
+		landiv3_landing: false,
+		landiv3_schema: false,
+		sales1: false,
+		sales2: false,
 	};
 
 	togglerEx1 = () => {
@@ -24,6 +29,36 @@ export default class Projects extends React.Component {
 	togglerEx2 = () => {
 		this.setState({
 			example2: !this.state.example2,
+		});
+	};
+
+	togglerLoginEx = () => {
+		this.setState({
+			landiv3_login: !this.state.landiv3_login,
+		});
+	};
+
+	togglerLandingEx = () => {
+		this.setState({
+			landiv3_landing: !this.state.landiv3_landing,
+		});
+	};
+
+	togglerSchemaEx = () => {
+		this.setState({
+			landiv3_schema: !this.state.landiv3_schema,
+		});
+	};
+
+	togglerSales1 = () => {
+		this.setState({
+			sales1: !this.state.sales1,
+		});
+	};
+
+	togglerSales2 = () => {
+		this.setState({
+			sales2: !this.state.sales2,
 		});
 	};
 
@@ -62,6 +97,61 @@ export default class Projects extends React.Component {
 							x5-video-player-fullscreen='portraint'
 							playsInline
 						/>
+					</DialogContent>
+				</Dialog>
+				<Dialog open={this.state.landiv3_login}>
+					<IconButton
+						className='dialog-close'
+						onClick={() => this.togglerLoginEx()}>
+						<MaterialIcon icon='close' />
+					</IconButton>
+					<DialogTitle>登录图例</DialogTitle>
+					<DialogContent>
+						<img src='/landi_login.png' />
+					</DialogContent>
+				</Dialog>
+				<Dialog open={this.state.landiv3_landing}>
+					<IconButton
+						className='dialog-close'
+						onClick={() => this.togglerLandingEx()}>
+						<MaterialIcon icon='close' />
+					</IconButton>
+					<DialogTitle>用户界面</DialogTitle>
+					<DialogContent>
+						<img src='/landi_home.png' />
+					</DialogContent>
+				</Dialog>
+				<Dialog open={this.state.landiv3_schema}>
+					<IconButton
+						className='dialog-close'
+						onClick={() => this.togglerSchemaEx()}>
+						<MaterialIcon icon='close' />
+					</IconButton>
+					<DialogTitle>教师授课表</DialogTitle>
+					<DialogContent>
+						<img src='/landi_schema.png' />
+					</DialogContent>
+				</Dialog>
+				<Dialog open={this.state.sales1}>
+					<IconButton
+						className='dialog-close'
+						onClick={() => this.togglerSales1()}>
+						<MaterialIcon icon='close' />
+					</IconButton>
+					<DialogTitle>虚拟电话机SDK</DialogTitle>
+					<DialogContent>
+						<img src='/landi_call.png' />
+					</DialogContent>
+				</Dialog>
+				<Dialog open={this.state.sales2}>
+					<IconButton
+						className='dialog-close'
+						onClick={() => this.togglerSales2()}>
+						<MaterialIcon icon='close' />
+					</IconButton>
+					<DialogTitle>教师授课表</DialogTitle>
+					<DialogContent>
+						<img src='/landi_call_1.png' />
 					</DialogContent>
 				</Dialog>
 				<Grid>
@@ -363,6 +453,102 @@ export default class Projects extends React.Component {
 									<div className='fill'></div>
 									<div className='tag'>国际客户服务</div>
 									<div className='tag'>国际推广</div>
+								</div>
+								<div className='card-content'>
+									<Button onClick={() => this.togglerLoginEx()}>
+										登录图例
+									</Button>
+									<Button onClick={() => this.togglerLandingEx()}>
+										用户界面
+									</Button>
+									<Button onClick={() => this.togglerSchemaEx()}>
+										用户界面
+									</Button>
+									<br />
+									<div className='desc mt-2'>
+										create by <code className='text-danger'>Nuxt with Vue</code>
+									</div>
+									<ul>
+										<li>Nuxt SSR</li>
+										<li>vuetify</li>
+										<li>vuex</li>
+										<li>vue-router</li>
+										<li>FaceBook/Twitter Share API</li>
+										<li>FaceBook Analytics 分享数据分析</li>
+										<li>Google Analytics 客户端数据分析</li>
+										<li>Google Docs/Drive 入职文档</li>
+										<li>TimzeZone 跨时区处理</li>
+									</ul>
+								</div>
+							</div>
+						</Cell>
+						{/* 电销 */}
+						<Cell phoneColumns={4} tabletColumns={4} desktopColumns={4}>
+							<div className='app-card'>
+								<div className='card-header'>
+									Market sales (电销管理平台)
+									<div className='fill'></div>
+									<div className='tag'>虚拟电话</div>
+									<div className='tag'>后台Manager</div>
+								</div>
+								<div className='card-content'>
+									<Button onClick={() => this.togglerSales1()}>图示1</Button>
+									<Button onClick={() => this.togglerSales2()}>图示2</Button>
+									<div className='desc mt-2'>
+										create by{' '}
+										<code className='text-danger'>React with iceWork </code>
+									</div>
+									<ul>
+										<li>redux</li>
+										<li>react-router</li>
+										<li>ice design</li>
+									</ul>
+								</div>
+							</div>
+						</Cell>
+						{/* 学生客户端 */}
+						<Cell phoneColumns={4} tabletColumns={4} desktopColumns={4}>
+							<div className='app-card'>
+								<div className='card-header'>
+									兰迪少儿英语 App
+									<div className='fill'></div>
+									<div className='tag'>Android</div>
+									<div className='tag'>IOS</div>
+									<div className='tag'>React-Native</div>
+								</div>
+								<div className='card-content'>
+									<div className='card-media'>
+										<img src='/landi_app.jpeg' />
+									</div>
+									<div className='desc mt-2'>
+										create by <code className='text-danger'>React-Native</code>
+									</div>
+									<div className='desc mt-2'>AppStore 搜索 '兰迪少儿英语'</div>
+								</div>
+							</div>
+						</Cell>
+						{/* 作业 */}
+						<Cell phoneColumns={4} tabletColumns={4} desktopColumns={4}>
+							<div className='app-card'>
+								<div className='card-header'>
+									学生作业
+									<div className='fill'></div>
+									<div className='tag'>微信网页</div>
+								</div>
+								<div className='card-content'>
+									<div className='desc'>
+										create by <code className='text-danger'>Vue-cli</code>
+									</div>
+									<ul>
+										<li>vuex</li>
+										<li>vue-router</li>
+										<li>Drag 拖拽</li>
+										<li>Record 录音</li>
+										<li>AI Voice analysis (AI 音频分析)</li>
+									</ul>
+									<div className='desc mt-2'>
+										微信公众号 搜索 '兰迪少儿英语'
+									</div>
 								</div>
 							</div>
 						</Cell>
