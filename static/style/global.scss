@@ -164,6 +164,7 @@ $n: 8px;
 @import '@material/react-menu-surface/index.scss';
 @import '@material/react-menu/index.scss';
 @import '@material/react-select/index.scss';
+@import '@material/react-snackbar/index.scss';
 
 // reset
 input {
@@ -196,7 +197,7 @@ input {
 	outline: 0;
 }
 
-.mdc-chip-set.shaped {
+.chips {
 	.mdc-chip {
 		border-radius: 4px;
 	}

@@ -1,6 +1,7 @@
 import MDCLayout from '../../components/layout/MDC.layout';
 import { Grid, Row, Cell } from '@material/react-layout-grid';
 import MaterialIcon from '@material/react-material-icon';
+import Router from 'next/router';
 import { ChipSet, Chip } from '@material/react-chips';
 import Card, { CardPrimaryContent, CardMedia } from '@material/react-card';
 import List, {
@@ -47,6 +48,22 @@ export default class Resume extends React.Component {
 			case 2:
 				window.open(`https://www.amap.com/search?query=武汉市`);
 				break;
+		}
+	};
+
+	switchCase = target => {
+		if (target) {
+			Router.push(`/resume/projects#${target}`).then(() => {
+				Router.events.emit('push', {
+					activeIndex: 1,
+					type: '项目经历',
+				});
+			});
+		} else {
+			this.props.giveToast({
+				message: '本作品没有亮点',
+				open: true,
+			});
 		}
 	};
 
@@ -267,14 +284,25 @@ export default class Resume extends React.Component {
 										<div className='chips'>
 											参与项目:
 											<ChipSet>
-												<Chip label='微信-天马报告 [ 手机页 ]' />
-												<Chip label='电商App孵化 [ 双平台APP+手机页 . 电商 ]' />
-												<Chip label='电商页面孵化 [ 跨终端企业站 . 响应式电商 ]' />
+												<Chip
+													label='微信-天马报告 [ 手机页 ]'
+													handleInteraction={() => this.switchCase('pegasus')}
+												/>
+												<Chip
+													label='电商App孵化 [ 双平台APP+手机页 . 电商 ]'
+													handleInteraction={() =>
+														this.switchCase('donew-store')
+													}
+												/>
+												<Chip
+													label='电商页面孵化 [ 跨终端企业站 . 响应式电商 ]'
+													handleInteraction={() => this.switchCase('fpw')}
+												/>
 											</ChipSet>
 										</div>
 									</div>
 								</div>
-
+								{/* 上海雷神 */}
 								<div className='cell-item'>
 									<div className='item-content'>
 										<img src='/leigod.jpg' className='avatar' />
@@ -290,12 +318,15 @@ export default class Resume extends React.Component {
 										<div className='chips'>
 											参与项目:
 											<ChipSet>
-												<Chip label='微信-NN约玩 [ 手机页 ]' />
+												<Chip
+													label='微信-NN约玩 [ 手机页 ]'
+													handleInteraction={() => this.switchCase('nnplayer')}
+												/>
 											</ChipSet>
 										</div>
 									</div>
 								</div>
-
+								{/* 兰迪 */}
 								<div className='cell-item'>
 									<div className='item-content'>
 										<img src='/abc360.png' className='avatar' />
@@ -311,9 +342,18 @@ export default class Resume extends React.Component {
 										<div className='chips'>
 											参与项目:
 											<ChipSet>
-												<Chip label='TPlus - [ 面向海外教师 ]' />
-												<Chip label='EPlus - [ 业务运营项目 ]' />
-												<Chip label='微信-作业 - [ 学生课后作业 ]' />
+												<Chip
+													label='TPlus - [ 面向海外教师 ]'
+													handleInteraction={() => this.switchCase('tp2')}
+												/>
+												<Chip
+													label='EPlus - [ 业务运营项目 ]'
+													handleInteraction={() => this.switchCase()}
+												/>
+												<Chip
+													label='微信-作业 - [ 学生课后作业 ]'
+													handleInteraction={() => this.switchCase('homework')}
+												/>
 											</ChipSet>
 										</div>
 									</div>
@@ -334,8 +374,14 @@ export default class Resume extends React.Component {
 										<div className='chips'>
 											参与项目:
 											<ChipSet>
-												<Chip label='U信 - [ API service ]' />
-												<Chip label='5km - [ 阅读社交 ]' />
+												<Chip
+													label='U信 - [ API service ]'
+													handleInteraction={() => this.switchCase()}
+												/>
+												<Chip
+													label='5km - [ 阅读社交 ]'
+													handleInteraction={() => this.switchCase()}
+												/>
 											</ChipSet>
 										</div>
 									</div>
@@ -356,9 +402,18 @@ export default class Resume extends React.Component {
 										<div className='chips'>
 											参与项目:
 											<ChipSet>
-												<Chip label='企业官网' />
-												<Chip label='微信服务' />
-												<Chip label='混合应用' />
+												<Chip
+													label='企业官网'
+													handleInteraction={() => this.switchCase()}
+												/>
+												<Chip
+													label='微信服务'
+													handleInteraction={() => this.switchCase()}
+												/>
+												<Chip
+													label='混合应用'
+													handleInteraction={() => this.switchCase()}
+												/>
 											</ChipSet>
 										</div>
 									</div>

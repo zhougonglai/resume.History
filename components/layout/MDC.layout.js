@@ -42,13 +42,7 @@ const pathMatch = {
 export default class MDCLayout extends React.Component {
 	state = {
 		open: false,
-		activeIndex: 0,
-		type: '关于我',
 	};
-
-	componentDidMount() {
-		this.setState(pathMatch[Router.pathname]);
-	}
 
 	/**
 	 * 切换 Drawer
@@ -61,49 +55,39 @@ export default class MDCLayout extends React.Component {
 	};
 
 	switchRouter = activeIndex => {
-		switch (activeIndex) {
-			case 0:
-				this.setState(
-					{
-						activeIndex,
-						type: '关于我',
-						open: false,
-					},
-					() => {
-						Router.push('/resume');
-					},
-				);
-				break;
-			case 1:
-				this.setState(
-					{
-						activeIndex,
-						type: '项目经历',
-						open: false,
-					},
-					() => {
-						Router.push('/resume/projects');
-					},
-				);
-				break;
-			case 2:
-				this.setState(
-					{
-						activeIndex,
-						type: '合作',
-						open: false,
-					},
-					() => {
-						Router.push('/resume/cooperation');
-					},
-				);
-				break;
-		}
+		this.setState(
+			{
+				open: false,
+			},
+			() => {
+				if (!activeIndex) {
+					Router.push('/resume').then(() => {
+						this.setState(pathMatch['/resume']);
+					});
+				} else if (activeIndex === 1) {
+					Router.push('/resume/projects').then(() => {
+						this.setState(pathMatch['/resume/projects']);
+					});
+				} else {
+					Router.push('/resume/cooperation').then(() => {
+						this.setState(pathMatch['/resume/cooperation']);
+					});
+				}
+			},
+		);
 	};
+
+	componentDidMount() {
+		this.setState(pathMatch[Router.pathname]);
+		console.log(Router);
+		Router.events.on('push', e => {
+			this.setState(e);
+		});
+	}
 
 	render() {
 		const { children } = this.props;
-		const { type } = this.state;
+		const { type, activeIndex } = this.state;
 		return (
 			<div className='root'>
 				<Head title={type} />
@@ -120,7 +104,7 @@ export default class MDCLayout extends React.Component {
 							<ListDivider tag='div' />
 							<List
 								singleSelection
-								selectedIndex={this.state.activeIndex}
+								selectedIndex={activeIndex}
 								handleSelect={index => this.switchRouter(index)}>
 								<ListItem>
 									<ListItemText primaryText='关于我' />
@@ -142,8 +126,8 @@ export default class MDCLayout extends React.Component {
 							<TopAppBarSection align='start'>
 								<TopAppBarIcon navIcon tabIndex={0}>
 									<MaterialIcon
-										aria-label='menu'
 										hasRipple
+										aria-label='menu'
 										icon='menu'
 										onClick={() => this.drawerHandle(true)}
 									/>

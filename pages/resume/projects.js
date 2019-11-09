@@ -158,7 +158,11 @@ export default class Projects extends React.Component {
 					<Headline5 className='title'>武汉无限未来科技有限公司</Headline5>
 					<Row>
 						{/* 天马报告 */}
-						<Cell phoneColumns={4} tabletColumns={4} desktopColumns={4}>
+						<Cell
+							phoneColumns={4}
+							id='pegasus'
+							tabletColumns={4}
+							desktopColumns={4}>
 							<div className='app-card'>
 								<div className='card-header'>
 									天马报告
@@ -210,7 +214,11 @@ export default class Projects extends React.Component {
 							</div>
 						</Cell>
 						{/* 斗牛商城 */}
-						<Cell phoneColumns={4} tabletColumns={4} desktopColumns={4}>
+						<Cell
+							id='donew-store'
+							phoneColumns={4}
+							tabletColumns={4}
+							desktopColumns={4}>
 							<div className='app-card'>
 								<div className='card-header'>
 									商城App孵化
@@ -280,7 +288,11 @@ export default class Projects extends React.Component {
 							</div>
 						</Cell>
 						{/* 湖北法拍网 */}
-						<Cell phoneColumns={4} tabletColumns={4} desktopColumns={4}>
+						<Cell
+							id='fpw'
+							phoneColumns={4}
+							tabletColumns={4}
+							desktopColumns={4}>
 							<div className='app-card'>
 								<div className='card-header'>
 									电商孵化
@@ -341,7 +353,11 @@ export default class Projects extends React.Component {
 
 					<Headline5 className='title my-2'>上海雷神网络科技有限公司</Headline5>
 					<Row>
-						<Cell phoneColumns={4} tabletColumns={4} desktopColumns={4}>
+						<Cell
+							id='nnplayer'
+							phoneColumns={4}
+							tabletColumns={4}
+							desktopColumns={4}>
 							<div className='app-card'>
 								<div className='card-header'>
 									NN约玩
@@ -380,7 +396,11 @@ export default class Projects extends React.Component {
 					<Headline5 className='title my-2'>杭州旦悦科技</Headline5>
 					<Row>
 						{/* TPlus V2 */}
-						<Cell phoneColumns={4} tabletColumns={4} desktopColumns={4}>
+						<Cell
+							id='tp2'
+							phoneColumns={4}
+							tabletColumns={4}
+							desktopColumns={4}>
 							<div className='app-card'>
 								<div className='card-header'>
 									TPlus V2.x (教师客户端)
@@ -446,7 +466,11 @@ export default class Projects extends React.Component {
 						</Cell>
 
 						{/* TPlus V3 */}
-						<Cell phoneColumns={4} tabletColumns={4} desktopColumns={4}>
+						<Cell
+							id='tp3'
+							phoneColumns={4}
+							tabletColumns={4}
+							desktopColumns={4}>
 							<div className='app-card'>
 								<div className='card-header'>
 									TPlus V3.x (教师客户端)
@@ -483,7 +507,11 @@ export default class Projects extends React.Component {
 							</div>
 						</Cell>
 						{/* 电销 */}
-						<Cell phoneColumns={4} tabletColumns={4} desktopColumns={4}>
+						<Cell
+							id='sales'
+							phoneColumns={4}
+							tabletColumns={4}
+							desktopColumns={4}>
 							<div className='app-card'>
 								<div className='card-header'>
 									Market sales (电销管理平台)
@@ -507,7 +535,11 @@ export default class Projects extends React.Component {
 							</div>
 						</Cell>
 						{/* 学生客户端 */}
-						<Cell phoneColumns={4} tabletColumns={4} desktopColumns={4}>
+						<Cell
+							id='students'
+							phoneColumns={4}
+							tabletColumns={4}
+							desktopColumns={4}>
 							<div className='app-card'>
 								<div className='card-header'>
 									兰迪少儿英语 App
@@ -528,7 +560,11 @@ export default class Projects extends React.Component {
 							</div>
 						</Cell>
 						{/* 作业 */}
-						<Cell phoneColumns={4} tabletColumns={4} desktopColumns={4}>
+						<Cell
+							id='homework'
+							phoneColumns={4}
+							tabletColumns={4}
+							desktopColumns={4}>
 							<div className='app-card'>
 								<div className='card-header'>
 									学生作业
