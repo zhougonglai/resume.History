@@ -79,7 +79,6 @@ export default class MDCLayout extends React.Component {
 
 	componentDidMount() {
 		this.setState(pathMatch[Router.pathname]);
-		console.log(Router);
 		Router.events.on('push', e => {
 			this.setState(e);
 		});
