@@ -237,7 +237,7 @@ export default class Resume extends React.Component {
 											/>
 										}
 									/>
-									<ListItemText primaryText='Docker . Nginx . Netlify . CircleCI' />
+									<ListItemText primaryText='Docker . Nginx .' />
 								</ListItem>
 							</List>
 						</Cell>
