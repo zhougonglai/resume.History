@@ -33,8 +33,12 @@ const pathMatch = {
 		activeIndex: 1,
 		type: '项目经历',
 	},
-	'/resume/cooperation': {
+	'/resume/skill': {
 		activeIndex: 2,
+		type: '技能图谱',
+	},
+	'/resume/cooperation': {
+		activeIndex: 3,
 		type: '合作',
 	},
 };
@@ -67,6 +71,10 @@ export default class MDCLayout extends React.Component {
 				} else if (activeIndex === 1) {
 					Router.push('/resume/projects').then(() => {
 						this.setState(pathMatch['/resume/projects']);
+					});
+				} else if (activeIndex === 2) {
+					Router.push('/resume/skill').then(() => {
+						this.setState(pathMatch['/resume/skill']);
 					});
 				} else {
 					Router.push('/resume/cooperation').then(() => {
@@ -110,6 +118,9 @@ export default class MDCLayout extends React.Component {
 								</ListItem>
 								<ListItem>
 									<ListItemText primaryText='项目经历' />
+								</ListItem>
+								<ListItem>
+									<ListItemText primaryText='技能图谱' />
 								</ListItem>
 								<ListItem>
 									<ListItemText primaryText='合作' />

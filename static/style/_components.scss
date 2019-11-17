@@ -240,6 +240,31 @@
 	}
 }
 
+.alert {
+	position: relative;
+	color: var(--mdc-theme-dark);
+	padding: 8px;
+	z-index: 1;
+	border-left: 4px solid var(--mdc-theme-primary);
+	border-radius: 4px;
+	overflow: hidden;
+	font-size: smaller;
+	letter-spacing: 0.035rem;
+	line-height: 1.7;
+	box-shadow: 0 0 4px 2px var(--gray-2), 0 0 3px 1px var(--gray-3);
+	&::after {
+		content: '';
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		top: 0;
+		right: 0;
+		// filter: blur(1px);
+		z-index: -1;
+		background-color: var(--gray-4);
+	}
+}
+
 .mdc-dialog__container {
 	.dialog-close {
 		position: absolute;

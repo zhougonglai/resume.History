@@ -1,0 +1,39 @@
+.circle-process {
+	position: relative;
+	width: fit-content;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	.credit_card.ignore {
+		min-height: 216px;
+		circle {
+			stroke-width: 8px;
+			transform: rotate(-45deg);
+			transform-origin: center;
+			stroke-linecap: round;
+			&.fill-fit {
+				stroke: var(--geekblue-2, #d6e4ff);
+			}
+			&.bar {
+				stroke: var(--mdc-theme-primary, #2f54eb);
+			}
+		}
+	}
+	.circle-content {
+		position: absolute;
+		top: 10px;
+		width: 54%;
+		left: 23%;
+		text-align: center;
+
+		.content-title {
+			color: var(--mdc-theme-primary);
+			&::after {
+				width: calc(100% + 8px);
+			}
+		}
+		.content-desc {
+			text-align: left;
+		}
+	}
+}
