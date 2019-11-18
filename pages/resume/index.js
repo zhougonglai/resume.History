@@ -51,6 +51,16 @@ export default class Resume extends React.Component {
 		}
 	};
 
+	/**
+	 * @param {index} 下标
+	 */
+	skillSelect = index => {
+		console.log(index);
+	};
+
+	/**
+	 * @param {target} 下标
+	 **/
 	switchCase = target => {
 		if (target) {
 			Router.push(`/resume/projects#${target}`).then(() => {
@@ -201,7 +211,7 @@ export default class Resume extends React.Component {
 							<div className='subtitle'>
 								<Subtitle1>核心技能</Subtitle1>
 							</div>
-							<List>
+							<List handleSelect={index => this.skillSelect(index)}>
 								<ListItem>
 									<ListItemGraphic
 										graphic={<img src='/logo.png' alt='vue' />}
