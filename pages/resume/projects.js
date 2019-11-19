@@ -9,6 +9,7 @@ const Container = dynamic(() => import('../../components/projects'), {
 			<CircleLoading />
 		</div>
 	),
+	ssr: false,
 });
 
 export default class Projects extends React.Component {
