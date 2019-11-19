@@ -176,6 +176,14 @@ input {
 	line-height: 1.5rem;
 }
 
+.loading-fit {
+	width: 100vw;
+	height: calc(100vh - 65px - 5vh);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
 .mdc-layout-grid {
 	max-width: 1440px;
 }
