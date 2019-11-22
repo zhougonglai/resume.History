@@ -6,6 +6,10 @@
 		width: 100%;
 		padding: 8px 0;
 
+		&:hover {
+			background-color: var(--gray-2);
+		}
+
 		.icon,
 		.avatar {
 			margin-right: 8px;
@@ -49,7 +53,6 @@
 		}
 
 		& + .cell-item {
-			margin-top: 8px;
 			border-top: 1px solid #e9e9ed;
 		}
 	}

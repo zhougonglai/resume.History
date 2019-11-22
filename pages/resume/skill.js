@@ -2,6 +2,7 @@ import MDCLayout from '../../components/layout/MDC.layout';
 import CircleProcess from '../../components/circle-process';
 import { Headline5 } from '@material/react-typography';
 import { Grid, Row, Cell } from '@material/react-layout-grid';
+import './skill.scss';
 
 export default class Skill extends React.Component {
 	static Layout = MDCLayout;
@@ -85,7 +86,7 @@ export default class Skill extends React.Component {
 							</div>
 						</Cell>
 					</Row>
-					<Headline5 className='title'>后端相关</Headline5>
+					<Headline5 className='title mx-2'>后端相关</Headline5>
 					<Row>
 						<Cell phoneColumns={4} tabletColumns={4} desktopColumns={4}>
 							<div className='flex justify-center'>
@@ -106,7 +107,7 @@ export default class Skill extends React.Component {
 							</div>
 						</Cell>
 					</Row>
-					<Headline5 className='title'>部署相关</Headline5>
+					<Headline5 className='title mx-2'>部署相关</Headline5>
 					<Row>
 						<Cell phoneColumns={4} tabletColumns={4} desktopColumns={4}>
 							<div className='flex justify-center'>

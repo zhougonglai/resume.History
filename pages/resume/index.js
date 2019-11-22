@@ -440,7 +440,13 @@ export default class Resume extends React.Component {
 									</div>
 								</div>
 
-								<div className='cell-item'>
+								<div
+									className='cell-item pointer'
+									onClick={() =>
+										window.open(
+											'https://graduation.udacity.com/confirm/DGUMGPZR',
+										)
+									}>
 									<div className='item-content'>
 										<img src='/udacity-cn.svg' className='avatar' />
 										<div className='item-info'>
