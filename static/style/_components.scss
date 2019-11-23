@@ -21,6 +21,9 @@
 			display: flex;
 			flex: 1;
 			position: relative;
+			.label {
+				flex-shrink: 0;
+			}
 			.time-line {
 				position: absolute;
 				bottom: 4px;

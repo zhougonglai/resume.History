@@ -1,7 +1,9 @@
 import MDCLayout from '../../components/layout/MDC.layout';
 import CircleProcess from '../../components/circle-process';
-import { Headline5 } from '@material/react-typography';
+import { Headline5, Subtitle1 } from '@material/react-typography';
+import LinearProgress from '@material/react-linear-progress';
 import { Grid, Row, Cell } from '@material/react-layout-grid';
+import { ChipSet, Chip } from '@material/react-chips';
 import './skill.scss';
 
 export default class Skill extends React.Component {
@@ -11,7 +13,7 @@ export default class Skill extends React.Component {
 		return (
 			<div className='skill-container'>
 				<Grid>
-					<Headline5 className='title mt-2'>前端技能</Headline5>
+					<Headline5 className='title mb-2'>前端技能</Headline5>
 					<Row>
 						<Cell phoneColumns={4} tabletColumns={4} desktopColumns={4}>
 							<div className='flex justify-center'>
@@ -20,7 +22,8 @@ export default class Skill extends React.Component {
 										<li>多场景应用</li>
 										<li>SSR - Nuxt</li>
 										<li>Vuex,vue-router</li>
-										<li>cli@3</li>
+										<li>vue-cli</li>
+										<li>Cypress</li>
 									</ul>
 								</CircleProcess>
 							</div>
@@ -37,7 +40,7 @@ export default class Skill extends React.Component {
 								<CircleProcess title='React' label='较熟练' process={65}>
 									<ul>
 										<li>精品小巧</li>
-										<li>SSR</li>
+										<li>SSR - Next</li>
 										<li>RN应用</li>
 									</ul>
 								</CircleProcess>
@@ -96,7 +99,7 @@ export default class Skill extends React.Component {
 										<li>GraphQL/Apollo</li>
 										<li>企业中台 - egg</li>
 										<li>serverless</li>
-										<li>soket.io</li>
+										<li>soket.io/WS</li>
 									</ul>
 								</CircleProcess>
 							</div>
@@ -117,6 +120,89 @@ export default class Skill extends React.Component {
 										<li>Nginx容器</li>
 									</ul>
 								</CircleProcess>
+							</div>
+						</Cell>
+					</Row>
+					<Headline5 className='title my-2'>热身技能</Headline5>
+					<Row>
+						<Cell phoneColumns={4} tabletColumns={4} desktopColumns={4}>
+							<div className='subtitle'>
+								<Subtitle1>前端相关</Subtitle1>
+							</div>
+							<div className='cell-list'>
+								<div className='cell-item'>
+									<div className='item-content align-center'>
+										<div className='label mr-2'>SSR</div>
+										<LinearProgress buffer={1} progress={0.25} />
+									</div>
+									<div className='item-container'>
+										<ChipSet>
+											<Chip label='Svelte' />
+											<Chip label='Grid-Some' />
+										</ChipSet>
+									</div>
+								</div>
+								<div className='cell-item'>
+									<div className='item-content align-center'>
+										<div className='label mr-2'>Web Component</div>
+										<LinearProgress buffer={1} progress={0.25} />
+									</div>
+									<div className='item-container'>
+										<ChipSet>
+											<Chip label='Lit-html' />
+											<Chip label='Lit-element' />
+											<Chip label='native' />
+										</ChipSet>
+									</div>
+								</div>
+								<div className='cell-item'>
+									<div className='item-content align-center'>
+										<div className='label  mr-2'>桌面平台</div>
+									</div>
+									<div className='item-container'>
+										<ChipSet>
+											<Chip label='Electron' />
+										</ChipSet>
+									</div>
+								</div>
+							</div>
+						</Cell>
+						<Cell phoneColumns={4} tabletColumns={4} desktopColumns={4}>
+							<div className='subtitle'>
+								<Subtitle1>后端相关</Subtitle1>
+							</div>
+							<div className='cell-list'>
+								<div className='cell-item'>
+									<div className='item-content align-center'>
+										<div className='label mr-2'>Golang</div>
+										<LinearProgress buffer={1} progress={0.25} />
+									</div>
+									<div className='item-container'>
+										<ChipSet>
+											<Chip label='Gin' />
+										</ChipSet>
+									</div>
+								</div>
+							</div>
+						</Cell>
+						<Cell phoneColumns={4} tabletColumns={4} desktopColumns={4}>
+							<div className='subtitle'>
+								<Subtitle1>机器学习</Subtitle1>
+							</div>
+							<div className='cell-list'>
+								<div className='cell-item'>
+									<div className='item-content align-center'>
+										<div className='label mr-2'>Python</div>
+										<LinearProgress buffer={1} progress={0.25} />
+									</div>
+									<div className='item-container'>
+										<ChipSet>
+											<Chip label='pandas' />
+											<Chip label='Matplotlib' />
+											<Chip label='scikit-learn' />
+										</ChipSet>
+									</div>
+								</div>
 							</div>
 						</Cell>
 					</Row>
