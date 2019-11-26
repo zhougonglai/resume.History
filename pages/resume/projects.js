@@ -485,9 +485,7 @@ export default class Projects extends React.Component {
 									<Button onClick={() => this.togglerLandingEx()}>
 										用户界面
 									</Button>
-									<Button onClick={() => this.togglerSchemaEx()}>
-										用户界面
-									</Button>
+									<Button onClick={() => this.togglerSchemaEx()}>授课表</Button>
 									<br />
 									<div className='desc mt-2'>
 										create by <code className='text-danger'>Nuxt with Vue</code>
