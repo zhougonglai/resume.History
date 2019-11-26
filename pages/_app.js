@@ -2,7 +2,10 @@ import App from 'next/app';
 import { Snackbar } from '@material/react-snackbar';
 import Router from 'next/router';
 
+import * as gtag from '../lib/gtag';
+
 const Noop = ({ children }) => children;
+Router.events.on('routeChangeComplete', url => gtag.pageview(url));
 
 class MyApp extends App {
 	state = {

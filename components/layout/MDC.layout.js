@@ -11,7 +11,6 @@ import List, {
 	ListItem,
 	ListItemText,
 	ListGroup,
-	ListGroupSubheader,
 	ListDivider,
 } from '@material/react-list';
 import Drawer, {
@@ -40,6 +39,10 @@ const pathMatch = {
 	'/resume/cooperation': {
 		activeIndex: 3,
 		type: '合作',
+	},
+	'/resume/work': {
+		activeIndex: 4,
+		type: '手头工作',
 	},
 };
 
@@ -76,9 +79,13 @@ export default class MDCLayout extends React.Component {
 					Router.push('/resume/skill').then(() => {
 						this.setState(pathMatch['/resume/skill']);
 					});
-				} else {
+				} else if (activeIndex === 3) {
 					Router.push('/resume/cooperation').then(() => {
 						this.setState(pathMatch['/resume/cooperation']);
+					});
+				} else if (activeIndex === 4) {
+					Router.push('/resume/work').then(() => {
+						this.setState(pathMatch['/resume/work']);
 					});
 				}
 			},
@@ -124,6 +131,9 @@ export default class MDCLayout extends React.Component {
 								</ListItem>
 								<ListItem>
 									<ListItemText primaryText='合作' />
+								</ListItem>
+								<ListItem>
+									<ListItemText primaryText='手头工作' />
 								</ListItem>
 							</List>
 							<ListDivider tag='div' />

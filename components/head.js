@@ -1,6 +1,7 @@
 import React from 'react';
 import NextHead from 'next/head';
 import { string } from 'prop-types';
+import { GA_TRACKING_ID } from '../lib/gtag';
 import '../static/style/global.scss';
 
 const defaultDescription = '';
@@ -44,6 +45,10 @@ const Head = props => (
 			href='https://fonts.googleapis.com/icon?family=Material+Icons'
 			rel='stylesheet'></link>
 		<script src='https://at.alicdn.com/t/font_1494421_vo3pg0wgetf.js'></script>
+		<script
+			async
+			src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
+		/>
 		{props.styles &&
 			props.styles.length &&
 			props.styles.map((style, i) => (
@@ -52,6 +57,16 @@ const Head = props => (
 		{props.scripts &&
 			props.scripts.length &&
 			props.scripts.map((script, i) => <script key={i} src={script}></script>)}
+		<script
+			dangerouslySetInnerHTML={{
+				__html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${GA_TRACKING_ID}');
+          `,
+			}}
+		/>
 	</NextHead>
 );
 
