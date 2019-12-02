@@ -5,6 +5,8 @@ body {
 	background-color: #fff;
 	text-rendering: optimizeLegibility;
 	scroll-behavior: smooth;
+	padding: 0;
+	margin: 0;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	-webkit-overflow-scrolling: touch;
@@ -43,6 +45,7 @@ p {
 
 :root {
 	--mdc-theme-primary: #2f54eb;
+	--mdc-theme-primary-rgb: 47, 84, 235;
 	/* light */
 	--geekblue-1: #f0f5ff;
 	--geekblue-2: #d6e4ff;
