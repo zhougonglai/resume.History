@@ -1,7 +1,6 @@
 .square {
 	position: relative;
-	width: 200px;
-	height: 200px;
+	width: inherit;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -75,6 +74,26 @@
 				border-color: white;
 			}
 		}
+	}
+}
+
+@media (max-width: 479px) {
+	.square {
+		height: calc(100vw - 2 * var(--mdc-layout-grid-margin-phone, 16px));
+	}
+}
+
+@media (max-width: 839px) and (min-width: 480px) {
+	.square {
+		height: calc(50vw - 3 / 2 * var(--mdc-layout-grid-gutter-tablet, 16px));
+	}
+}
+
+@media (min-width: 840px) {
+	.square {
+		height: calc(
+			33.33333vw - 4 / 3 * var(--mdc-layout-grid-gutter-desktop, 24px)
+		);
 	}
 }
 
