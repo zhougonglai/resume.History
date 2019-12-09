@@ -145,7 +145,7 @@ export default class extends React.Component {
 						onClick={() => this.togglerSales2()}>
 						<MaterialIcon icon='close' />
 					</IconButton>
-					<DialogTitle>教师授课表</DialogTitle>
+					<DialogTitle>销售数据管理</DialogTitle>
 					<DialogContent>
 						<img src='/landi_call_1.png' />
 					</DialogContent>
@@ -481,9 +481,7 @@ export default class extends React.Component {
 									<Button onClick={() => this.togglerLandingEx()}>
 										用户界面
 									</Button>
-									<Button onClick={() => this.togglerSchemaEx()}>
-										用户界面
-									</Button>
+									<Button onClick={() => this.togglerSchemaEx()}>授课表</Button>
 									<br />
 									<div className='desc mt-2'>
 										create by <code className='text-danger'>Nuxt with Vue</code>
@@ -526,6 +524,7 @@ export default class extends React.Component {
 										<li>redux</li>
 										<li>react-router</li>
 										<li>ice design</li>
+										<li>七鱼SDK</li>
 									</ul>
 								</div>
 							</div>
