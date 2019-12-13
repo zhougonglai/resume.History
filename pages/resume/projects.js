@@ -6,9 +6,17 @@ import Dialog, { DialogTitle, DialogContent } from '@material/react-dialog';
 import Button from '@material/react-button';
 import MaterialIcon from '@material/react-material-icon';
 import dynamic from 'next/dynamic';
+import CircleLoading from '../../components/circle-loading';
 import './projects.scss';
 
-const DynamicComponent = dynamic(() => import('../../components/projects'));
+const DynamicComponent = dynamic(() => import('../../components/projects'), {
+	loading: () => (
+		<div className='fill align-center'>
+			<CircleLoading />
+		</div>
+	),
+	ssr: false,
+});
 
 export default class Projects extends React.Component {
 	static Layout = MDCLayout;
