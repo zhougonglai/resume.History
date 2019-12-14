@@ -98,8 +98,8 @@ export default class Skill extends React.Component {
 							<HoverCard className='hue-2'>
 								<div className='subtitle large ml-2'>混合应用</div>
 								<ul>
+									<li>Taro</li>
 									<li>Uni-app</li>
-									<li>Chameleon</li>
 									<li>Electron</li>
 								</ul>
 							</HoverCard>
