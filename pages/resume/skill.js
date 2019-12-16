@@ -99,6 +99,7 @@ export default class Skill extends React.Component {
 								<div className='subtitle large ml-2'>混合应用</div>
 								<ul>
 									<li>Taro</li>
+									<li>Rax</li>
 									<li>Uni-app</li>
 									<li>Electron</li>
 								</ul>
