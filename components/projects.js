@@ -261,14 +261,6 @@ export default class extends React.Component {
 										dense
 										outlined
 										target='_blank'
-										href='https://www.pgyer.com/1JnN'
-										trailingIcon={<MaterialIcon icon='launch' />}>
-										<MaterialIcon icon='android' />
-									</Button>
-									<Button
-										dense
-										outlined
-										target='_blank'
 										href='https://storekit.zhougonglai.now.sh'
 										trailingIcon={<MaterialIcon icon='launch' />}>
 										前端示例
