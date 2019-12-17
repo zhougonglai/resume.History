@@ -5,7 +5,9 @@ import Router from 'next/router';
 import * as gtag from '../lib/gtag';
 
 const Noop = ({ children }) => children;
-Router.events.on('routeChangeComplete', url => gtag.pageview(url));
+if (process.env.NODE_ENV === 'production') {
+	Router.events.on('routeChangeComplete', url => gtag.pageview(url));
+}
 
 class MyApp extends App {
 	state = {

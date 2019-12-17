@@ -26,7 +26,7 @@ export default class Skill extends React.Component {
 									<li>vue-cli</li>
 									<li>Cypress</li>
 								</ul>
-								<div className='alert mt-2'>
+								<div className='alert no-select mt-2'>
 									tip: 自2017年初起从
 									<code className='text-danger'>angularJs</code>
 									转战<code className='text-danger'>Vue</code>
@@ -43,7 +43,7 @@ export default class Skill extends React.Component {
 									<li>SSR - Next</li>
 									<li>RN应用</li>
 								</ul>
-								<div className='alert mt-2'>
+								<div className='alert no-select mt-2'>
 									tip: 最初从<code className='text-danger'>0.10.x</code>
 									版本开始入门react.配合当时兴起的babel. 在2018年初在
 									<code className='text-danger'>Udacity</code>
@@ -62,7 +62,7 @@ export default class Skill extends React.Component {
 									<li>企业级应用</li>
 									<li>hybird混合应用 - ionic</li>
 								</ul>
-								<div className='alert mt-2'>
+								<div className='alert no-select mt-2'>
 									tip:接触前端最开始是从
 									<code className='text-danger'>angularJs</code>开始的. 从
 									<code className='text-danger'>angular TS</code>
@@ -80,7 +80,7 @@ export default class Skill extends React.Component {
 									<li>请求 [http, dio]</li>
 									<li>状态管理</li>
 								</ul>
-								<div className='alert mt-2'>
+								<div className='alert no-select mt-2'>
 									tip:入门级,会布局.对接请求.组织组件.管理状态.
 								</div>
 							</HoverCard>
@@ -118,7 +118,7 @@ export default class Skill extends React.Component {
 									<li>serverless</li>
 									<li>soket.io/WS</li>
 								</ul>
-								<div className='alert mt-2'>
+								<div className='alert no-select mt-2'>
 									tip:构建非主干<code className='text-danger'>中台/后台</code>
 									服务.GraphQL/Apollo配合serverless更好的输出API.
 									于雷神网络科技有限公司接触WebRTC.
