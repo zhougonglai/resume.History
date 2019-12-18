@@ -93,6 +93,7 @@ export default class extends React.Component {
 								<ul>
 									<li>Taro</li>
 									<li>Rax</li>
+									<li>mpx</li>
 									<li>Uni-app</li>
 									<li>Electron</li>
 								</ul>

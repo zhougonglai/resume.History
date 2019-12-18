@@ -37,6 +37,7 @@ export default class extends React.Component {
 								<div className='subtitle large'>跨平台混合应用</div>
 								<ul>
 									<li>uniapp❌</li>
+									<li>mpx[各类小程序融合]</li>
 									<li>Taro👌[h5/RN/各类小程序]</li>
 									<li>Rax👌[h5/weex/阿里小程序开发平台/flutter(进行中)]</li>
 								</ul>
