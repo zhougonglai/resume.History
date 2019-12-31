@@ -89,7 +89,7 @@ export default class extends React.Component {
 						</Cell>
 						<Cell phoneColumns={4} tabletColumns={4} desktopColumns={4}>
 							<HoverCard className='hue-2'>
-								<div className='subtitle large ml-2'>混合应用</div>
+								<div className='subtitle large ml-2'>跨端应用</div>
 								<ul>
 									<li>Taro</li>
 									<li>Rax</li>
